@@ -33,3 +33,15 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         'content' => $faker->text,
     ];
 });
+$factory->define(App\Base::class, function (Faker\Generator $faker) {
+    return [
+        'name'  => $faker->name,
+        'topic' => $faker->text,
+    ];
+});
+$factory->define(App\Origem::class, function (Faker\Generator $faker) {
+    return [
+        'name'  => $faker->name,
+        'id_base' => str_random(2),
+    ];
+});

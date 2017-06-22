@@ -1,3 +1,7 @@
+import {DetailsBasesComponent} from './app/components/details-bases/details-bases.component';
+import {AllBasesComponent} from './app/components/all-bases/all-bases.component';
+import {CreateBaseFormComponent} from './app/components/create-base-form/create-base-form.component';
+import {UiModalComponent} from './app/components/ui-modal/ui-modal.component';
 import {UiComponentsComponent} from './app/components/ui-components/ui-components.component';
 import {AllPostsComponent} from './app/components/all-posts/all-posts.component';
 import {CreatePostFormComponent} from './app/components/create_post_form/create_post_form.component';
@@ -10,6 +14,10 @@ import {LoginFormComponent} from './app/components/login-form/login-form.compone
 import {RegisterFormComponent} from './app/components/register-form/register-form.component';
 
 angular.module('app.components')
+	.component('detailsBases', DetailsBasesComponent)
+	.component('allBases', AllBasesComponent)
+	.component('createBaseForm', CreateBaseFormComponent)
+	.component('uiModal', UiModalComponent)
 	.component('uiComponents', UiComponentsComponent)
 	.component('allPosts', AllPostsComponent)
 	.component('createPostForm', CreatePostFormComponent)

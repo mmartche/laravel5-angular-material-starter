@@ -76,5 +76,21 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                     templateUrl: getView('posts')
                 }
             }
+       })
+        .state('app.create_base', {
+            url: '/bases',
+            views: {
+                'main@': {
+                    templateUrl: getView('create_base')
+                }
+            }
+       })
+        .state('app.details_base', {
+            url: '/bases/:base_id',
+            views: {
+                'main@': {
+                    templateUrl: getView('details_base')
+                }
+            }
        });
 }

@@ -31,6 +31,12 @@ $api->group(['middleware' => ['api']], function ($api) {
 
     $api->post('posts', 'CreatePostController@create');
     $api->get('posts', 'PostsController@get');
+
+    $api->post('/bases', 'BasesController@create');
+    $api->get('/bases', 'BasesController@get');
+    $api->get('/bases/coleta', 'BasesController@index');
+    $api->put('/bases/{base_id}', 'BasesController@update');
+
 });
 
 //protected API routes with JWT (must be logged in)

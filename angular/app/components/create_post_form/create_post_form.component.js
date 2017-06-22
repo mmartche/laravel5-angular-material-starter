@@ -14,10 +14,10 @@ class CreatePostFormController{
       var data = {
         name: this.name,
         url: this.url,
-        content: this.content,
+        content: this.content
       };
       
-       this.API.all('posts').post(data).then((response) => {
+       this.API.all('posts').post(data).then(() => {
             this.ToastService.show('Post added successfully');
             this.name = '';
             this.url = '';
