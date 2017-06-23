@@ -12,6 +12,7 @@ class BasesController extends Controller
         $bases = Base::get();
         return response()->success(['bases' => $bases]);
     }
+
     public function index(Request $request) {
         $base_id = $request->base_id;
         $base = Base::where('id',(int)$base_id)->get();
@@ -22,28 +23,33 @@ class BasesController extends Controller
         // return $this->success($topic, 200);
         return response()->success(['bases' => $base]);
     }
-    public function create(Request $request) {
+    
+    public function save(Request $request) {
     	$this->validate($request, [
     		'name' => 'required|string',
     		'topic' => 'required|string',
     	]);
-    	$base = new Base;
-    	$base->name = $request->input('name');
-    	$base->topic = $request->input('topic');
-    	$base->save();
+        if (!empty($request->input('id'))) {
+            $base = Base::find($request->input('id'));
+        } else {
+            $base = new Base;
+        }
+        $base->name = $request->input('name');
+        $base->topic = $request->input('topic');
+        $base->save();
 
-    	return response()->success(compact('bases'));
+        return response()->success(compact('bases'));
     }
 
-    public function update(Request $request, $base_id){
+    public function update(Request $request){
         $this->validate($request, [
+            'base_id' => 'required|integer',
             'name' => 'required|string',
             'topic' => 'required|string',
         ]);
         
         $base->name = $request->input('name');
         $base->topic = $request->input('topic');
-        $base->base_id = $base_id;
         $base->save();
         return response()->success(compact('bases'));
     }

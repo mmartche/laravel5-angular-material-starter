@@ -14,11 +14,23 @@ class DetailsBasesController{
         let base_id = this.$state.params.base_id;
         this.API.all('bases').get('coleta',{base_id}).then((response) => {
             this.bases = response.data.bases;
+            this.bases.base_id = response.data.bases.id;
         })
-        this.base = base_id;
     }
     submit(){
-        this.$state.go('app.landing');
+        var data = {
+            base_id: this.bases[0].id,
+            id: this.bases[0].id,
+            name: this.bases[0].name,
+            topic: this.bases[0].topic
+        };
+
+        this.API.all('bases').post(data).then(() => {
+            this.ToastService.show('Base deu bom');
+            this.$state.go('app.create_base');
+        }, (error) =>{
+            this.ToastService.show('Base deu ruim');
+        });
     }
 }
 
