@@ -34,8 +34,12 @@ $api->group(['middleware' => ['api']], function ($api) {
 
     $api->post('/bases', 'BasesController@save');
     $api->get('/bases', 'BasesController@get');
-    $api->get('/bases/coleta', 'BasesController@index');
+    $api->get('/bases/coleta', 'BasesController@colect');
     $api->put('/bases/{base_id}', 'BasesController@update');
+
+    $api->get('/basePerChannel/coleta', 'basePerChannel@colect');
+    $api->get('/basePerChannel', 'basePerChannel@get');
+    $api->post('/basePerChannel', 'basePerChannel@save');
 
 });
 

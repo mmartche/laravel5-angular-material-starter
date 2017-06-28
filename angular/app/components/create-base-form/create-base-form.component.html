@@ -1,15 +1,61 @@
 <form ng-submit="vm.submit()">
-  
+
+<md-card>
     <md-input-container>
-      <label>Name</label>
-      <input type="text" ng-model="vm.name">
-    </md-input-container>
-  
-    <md-input-container>
-      <label>Topic</label>
-      <input type="text" ng-model="vm.topic">
+      <label>Nome da Base</label>
+      <input type="text" ng-model="vm.base_name">
+     </md-input-container>
+
+     <md-input-container>
+      <label>Remetente E-mail</label>
+      <input type="text" ng-model="vm.base_sender">
+     </md-input-container>
+
+     <md-input-container>
+      <label>Conteúdo</label>
+      <input type="text" ng-model="vm.base_content">
+     </md-input-container>
+     
+     <md-input-container>
+      <label>Periodicidade</label>
+      <input type="text" ng-model="vm.base_periodicity">
+     </md-input-container>
+     
+     <md-input-container>
+      <label>(exact) nameExternalKey</label>
+      <input type="text" ng-model="vm.base_nameExternalKey">
+     </md-input-container>
+     
+     <md-input-container>
+      <label>(exact) nameBase</label>
+      <input type="text" ng-model="vm.base_nameBase">
+     </md-input-container>
+     
+     <md-input-container>
+      <label>(exact) nameSubBase</label>
+      <input type="text" ng-model="vm.base_nameSubBase">
      </md-input-container>
   
-    <md-button type="submit" class="md-primary md-raised">Create base</md-button>
-  
+  	<md-input-container>
+      <label>(exact) nameOrigin</label>
+      <input type="text" ng-model="vm.base_nameOrigin">
+     </md-input-container>
+
+     <md-input-container>
+      <label>Exibir na Central de Newsletter</label>
+      <input type="text" ng-model="vm.base_status">
+     </md-input-container>
+
+     <md-input-container>
+      <label>País</label>
+      <input type="text" ng-model="vm.base_country">
+     </md-input-container>
+
+     <md-input-container>
+      <label>id_user</label>
+      <input type="text" ng-model="vm.base_id_user">
+     </md-input-container>
+
+    <md-button type="submit" class="md-primary md-raised">Criar base</md-button>
+  </md-card>
 </form>

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Base extends Model
+class channel extends Model
 {
     protected $hidden = [
         'created_at', 'updated_at',

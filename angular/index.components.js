@@ -1,3 +1,4 @@
+import {FormAddChannelComponent} from './app/components/form-add-channel/form-add-channel.component';
 import {DetailsBasesComponent} from './app/components/details-bases/details-bases.component';
 import {AllBasesComponent} from './app/components/all-bases/all-bases.component';
 import {CreateBaseFormComponent} from './app/components/create-base-form/create-base-form.component';
@@ -14,6 +15,7 @@ import {LoginFormComponent} from './app/components/login-form/login-form.compone
 import {RegisterFormComponent} from './app/components/register-form/register-form.component';
 
 angular.module('app.components')
+	.component('formAddChannel', FormAddChannelComponent)
 	.component('detailsBases', DetailsBasesComponent)
 	.component('allBases', AllBasesComponent)
 	.component('createBaseForm', CreateBaseFormComponent)

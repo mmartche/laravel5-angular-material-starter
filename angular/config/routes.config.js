@@ -78,7 +78,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             }
        })
         .state('app.create_base', {
-            url: '/bases',
+            url: '/bases/novo',
             views: {
                 'main@': {
                     templateUrl: getView('create_base')
@@ -90,6 +90,14 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             views: {
                 'main@': {
                     templateUrl: getView('details_base')
+                }
+            }
+       })
+        .state('app.all_bases', {
+            url: '/bases',
+            views: {
+                'main@': {
+                    templateUrl: getView('all_bases')
                 }
             }
        });

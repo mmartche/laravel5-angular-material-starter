@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrigemsTable extends Migration
+class CreateBasePerChannelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class CreateOrigemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('origems', function (Blueprint $table) {
-            $table->increments('origin_id');
-            $table->string('origin_base_id');
-            $table->string('origin_name');
+        Schema::create('base_per_channels', function (Blueprint $table) {
+            $table->increments('basePerChannel_id');
+            $table->string('basePerChannel_base_id');
+            $table->string('basePerChannel_channel_id');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateOrigemsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('origems');
+        Schema::drop('base_per_channels');
     }
 }
