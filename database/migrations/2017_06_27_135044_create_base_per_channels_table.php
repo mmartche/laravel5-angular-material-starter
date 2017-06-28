@@ -13,7 +13,7 @@ class CreateBasePerChannelsTable extends Migration
     public function up()
     {
         Schema::create('base_per_channels', function (Blueprint $table) {
-            $table->increments('basePerChannel_id');
+            $table->increments('id');
             $table->string('basePerChannel_base_id');
             $table->string('basePerChannel_channel_id');
             $table->timestamps();

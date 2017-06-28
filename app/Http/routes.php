@@ -37,10 +37,13 @@ $api->group(['middleware' => ['api']], function ($api) {
     $api->get('/bases/coleta', 'BasesController@colect');
     $api->put('/bases/{base_id}', 'BasesController@update');
 
-    $api->get('/basePerChannel/coleta', 'basePerChannel@colect');
-    $api->get('/basePerChannel', 'basePerChannel@get');
-    $api->post('/basePerChannel', 'basePerChannel@save');
+    $api->get('/basePerChannel/coleta', 'basePerChannelController@colect');
+    $api->get('/basePerChannel/notMyBase', 'basePerChannelController@colectNotMyBase');
+    $api->get('/basePerChannel', 'basePerChannelController@get');
+    $api->post('/basePerChannel', 'basePerChannelController@save');
 
+    $api->get('/channels/', 'ChannelsController@get');
+    $api->get('/channels/coleta', 'ChannelsController@colectMyData');
 });
 
 //protected API routes with JWT (must be logged in)

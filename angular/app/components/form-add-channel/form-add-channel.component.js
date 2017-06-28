@@ -12,26 +12,32 @@ class FormAddChannelController{
 
     $onInit(){
         let base_id = this.$state.params.base_id;
-        this.API.all('bases').get('coleta',{base_id}).then((response) => {
-            this.bases = response.data.bases;
-            this.bases.base_id = response.data.bases.id;
-        })
+        this.API.all('channels').get('').then((response) => {
+            this.channels = response.data.channels;
+        });
+        this.API.all('basePerChannel').get('coleta',{base_id}).then((response) => {
+            this.myChannels = response.data.basePerChannel;
+            // this.channels.channel_id = response.data.channels.id;
+        });
     }
     submit(){
+        var channel_id_use = this.channel_id;
+        function findChannel(channel_use) {
+            return channel_use.id === Number(channel_id_use);
+        }
+        var channel_find = this.channels.find(findChannel);
+        this.channel_name = channel_find.channel_name;
         var data = {
-            base_id: this.bases[0].id,
-            id: this.bases[0].id,
-            base_name : this.bases[0].base_name,
-            base_content : this.bases[0].base_content,
-            base_status : this.bases[0].base_status,
-            base_id_user : this.bases[0].base_id_user
+            base_id : this.$state.params.base_id,
+            channel_id : this.channel_id,
+            channel_name: this.channel_name,
         };
-
-        this.API.all('bases').post(data).then(() => {
-            this.ToastService.show('Base deu bom');
-            this.$state.go('app.all_bases');
+        this.API.all('basePerChannel').post(data).then(() => {
+            this.ToastService.show('Canal deu bom');
+            this.myChannels.unshift(data);
+            // this.$state.go('app.all_bases');
         }, (error) =>{
-            this.ToastService.show('Base deu ruim');
+            this.ToastService.show('Canal deu ruim');
         });
     }
 }

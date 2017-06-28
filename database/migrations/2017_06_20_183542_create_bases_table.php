@@ -10,21 +10,22 @@ class CreateBasesTable extends Migration
      *
      * @return void
      */
+    //TRYING USE NULL
     public function up()
     {
         Schema::create('bases', function (Blueprint $table) {
-            $table->increments('base_id');
-            $table->string('base_name');
-            $table->string('base_sender');
-            $table->string('base_content');
-            $table->string('base_periodicity');
-            $table->string('base_nameExternalKey');
-            $table->string('base_nameBase');
-            $table->string('base_nameSubBase');
-            $table->string('base_nameOrigin');
-            $table->string('base_status');
-            $table->string('base_country');
-            $table->string('base_id_user');
+            $table->increments('id');
+            $table->string('base_name',null);
+            $table->string('base_sender',null);
+            $table->string('base_content',null);
+            $table->string('base_periodicity',null);
+            $table->string('base_nameExternalKey',null);
+            $table->string('base_nameBase',null);
+            $table->string('base_nameSubBase',null);
+            $table->string('base_nameOrigin',null);
+            $table->string('base_status',null);
+            $table->string('base_country',null);
+            $table->string('base_id_user',null);
             $table->timestamps();
         });
     }

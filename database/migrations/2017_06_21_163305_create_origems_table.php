@@ -13,7 +13,7 @@ class CreateOrigemsTable extends Migration
     public function up()
     {
         Schema::create('origems', function (Blueprint $table) {
-            $table->increments('origin_id');
+            $table->increments('id');
             $table->string('origin_base_id');
             $table->string('origin_name');
             $table->timestamps();

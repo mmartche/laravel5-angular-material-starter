@@ -17,7 +17,7 @@ class BasesController extends Controller
 
     public function colect(Request $request) {
         $base_id = $request->base_id;
-        $base = Base::leftJoin('base_per_channels','base_per_channels.basePerChannel_base_id','=','bases.id')->leftJoin('channels','channels.id','=','base_per_channels.basePerChannel_channel_id')->where('bases.id',(int)$base_id)->get();
+        $base = Base::where('bases.id',(int)$base_id)->get();
         if(!$base){
             return $this->error("The base with {$base_id} doesn't exist", 404);
         }
@@ -29,7 +29,6 @@ class BasesController extends Controller
     public function save(Request $request) {
     	$this->validate($request, [
             'base_name' => 'required|string',
-    		'base_content' => 'required|string',
     	]);
         if (!empty($request->input('id'))) {
             $base = Base::find($request->input('id'));
