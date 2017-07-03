@@ -48,6 +48,10 @@ $api->group(['middleware' => ['api']], function ($api) {
     $api->get('/emailMarketing/', 'EmailMarketingController@get');
     $api->get('/emailMarketing/all', 'EmailMarketingController@getAll');
     $api->post('/emailMarketing/', 'EmailMarketingController@save');
+    
+    $api->get('/emailMarketingInfos/', 'EmailMarketingInfosController@get');
+    $api->post('/emailMarketingInfos/', 'EmailMarketingInfosController@save');
+
 });
 
 //protected API routes with JWT (must be logged in)

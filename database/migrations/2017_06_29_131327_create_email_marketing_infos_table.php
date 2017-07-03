@@ -16,6 +16,12 @@ class CreateEmailMarketingInfosTable extends Migration
             $table->increments('id');
             $table->string('email_marketing_id');
             $table->string('base_id');
+            $table->string('origem_id');
+            $table->string('site_origem');
+            $table->string('optin');
+            $table->string('bounce');
+            $table->string('spam');
+            $table->string('engagement');
             $table->timestamps();
         });
     }
