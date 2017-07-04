@@ -21,7 +21,7 @@ class LoginFormController {
 			.then((response) => {
 				this.$auth.setToken(response.data);
 
-				this.ToastService.show('Logged in successfully.');
+				this.ToastService.show('Log in feito com sucesso.');
 			})
 			.catch(this.failedLogin.bind(this));
 	}

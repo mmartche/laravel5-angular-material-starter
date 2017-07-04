@@ -24,7 +24,7 @@ class RegisterFormController {
 				//remove this if you require email verification
 				this.$auth.setToken(response.data);
 
-				this.ToastService.show('Successfully registered.');
+				this.ToastService.show('Registro com Sucesso.');
 			})
 			.catch(this.failedRegistration.bind(this));
 	}

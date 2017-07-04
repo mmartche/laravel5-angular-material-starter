@@ -1,14 +1,15 @@
 <form ng-submit="vm.submit()">  
     <md-input-container>
-		<select ng-model="vm.channel_id" >
-			<option ng-repeat="channel in vm.channels" value="{{ channel.id }}">
-		      {{ channel.channel_name }}
-		    </option>
-		</select>
+		<md-select ng-model="vm.channel_id" aria-label="Channais">
+			<md-option><em>Escolha um Canal</em></md-option>
+			<md-option ng-repeat="channel in vm.channels" ng-value="{{ channel.id }}" >
+				{{ channel.channel_name }}
+			</md-option>
+		</md-select>
     </md-input-container>
-    <md-button type="submit" class="md-primary md-raised">Add Canal</md-button>
+    <md-button type="submit" class="md-primary md-raised">Adicionar Canal</md-button>
 </form>
-<md-card>assim</md-card>
+<md-card>Canais vinculados</md-card>
 <md-card ng-repeat="channel in vm.myChannels">
 	<a href="http://localhost:8000/#!/channels/{{channel.id}}">
 		<span>{{channel.id}}</span>

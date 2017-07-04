@@ -40,8 +40,8 @@ class basePerChannelController extends Controller
 
     public function save(Request $request) {
     	$this->validate($request, [
-            'base_id' => 'required|string',
-    		'channel_id' => 'required|string',
+            'base_id' => 'required|int',
+    		'channel_id' => 'required|int',
     	]);
         if (!empty($request->input('id'))) {
             $base = basePerChannel::find($request->input('id'));

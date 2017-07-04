@@ -59,6 +59,6 @@ class EmailMarketingInfosController extends Controller
         $EmailMarketingInfosSave->base_id = $request->input('base_id');
         $EmailMarketingInfosSave->engagement = !empty($EmailMarketingInfosClientSearch[0]['engagement']) ? $EmailMarketingInfosClientSearch[0]['engagement'] + 1 : 1;
         $EmailMarketingInfosSave->save();
-        return response()->success(compact('EmailMarketingInfos'));
+        return response()->success(['EmailMarketingInfos' => $EmailMarketingInfosSave]);
     }
 }

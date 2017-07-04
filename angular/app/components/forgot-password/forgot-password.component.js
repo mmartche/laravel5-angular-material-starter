@@ -15,7 +15,7 @@ class ForgotPasswordController {
         this.API.all('auth/password/email').post({
             email: this.email
         }).then(() => {
-            this.ToastService.show(`Please check your email for instructions on how to reset your password.`);
+            this.ToastService.show(`Por favor, verifique seu e-mail para instruções de como definir sua senha`);
             this.$state.go('app.landing');
         });
     }
