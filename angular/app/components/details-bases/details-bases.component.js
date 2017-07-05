@@ -37,7 +37,7 @@ class DetailsBasesController{
         this.API.all('bases').post(data).then(() => {
             this.ToastService.show('Base deu bom');
             this.$state.go('app.all_bases');
-        }, (error) =>{
+        }, () =>{
             this.ToastService.show('Base deu ruim');
         });
     }

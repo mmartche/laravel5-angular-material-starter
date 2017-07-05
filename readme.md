@@ -3,6 +3,8 @@ Por favor, leia a documentação primeiro
 
 ## Instalação
 
+<code>composer install</code>
+
 <code>npm install</code>
 
 <code>bower install</code>

@@ -30,13 +30,13 @@ class FormAddChannelController{
         var data = {
             base_id : this.$state.params.base_id,
             channel_id : this.channel_id,
-            channel_name: this.channel_name,
+            channel_name: this.channel_name
         };
         this.API.all('basePerChannel').post(data).then(() => {
             this.ToastService.show('Canal deu bom');
             this.myChannels.unshift(data);
             // this.$state.go('app.all_bases');
-        }, (error) =>{
+        }, () =>{
             this.ToastService.show('Canal deu ruim');
         });
     }
